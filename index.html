@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Rehan!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            animation: backgroundGlow 5s infinite alternate;
+        }
+
+        @keyframes backgroundGlow {
+            0% {
+                background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            }
+            100% {
+                background: linear-gradient(to bottom, #ff758c, #fbd3e9);
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .message {
+            text-align: center;
+            color: #fff;
+        }
+
+        .message h1 {
+            font-size: 4.5rem;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .message p {
+            font-size: 1.8rem;
+            margin: 10px 0 30px;
+            animation: fadeIn 2s ease-in-out 1s;
+        }
+
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 250px;
+            margin: auto;
+            animation: fadeIn 2s ease-in-out 1.5s;
+        }
+
+        .cake .layer {
+            position: absolute;
+            background: #ff6f61;
+            border-radius: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .cake .layer:nth-child(1) {
+            height: 50px;
+            width: 180px;
+            top: 0;
+        }
+
+        .cake .layer:nth-child(2) {
+            height: 70px;
+            width: 140px;
+            top: 60px;
+        }
+
+        .cake .layer:nth-child(3) {
+            height: 90px;
+            width: 100px;
+            top: 140px;
+        }
+
+        .candle {
+            position: absolute;
+            width: 10px;
+            height: 50px;
+            background: #fff;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .flame {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ffcc33, #ff9933);
+            border-radius: 50%;
+            animation: flicker 0.3s infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes flicker {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+            100% {
+                transform: translateX(-50%) scale(1.2);
+            }
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 1rem;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            animation: fadeIn 3s ease-in-out 3s;
+        }
+
+        .name {
+            font-size: 2rem;
+            color: #ffefdb;
+            margin-bottom: 15px;
+            animation: fadeIn 2s ease-in-out 0.5s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .message h1 {
+                font-size: 3rem;
+            }
+            .message p {
+                font-size: 1.5rem;
+            }
+            .cake {
+                width: 150px;
+                height: 200px;
+            }
+            .cake .layer:nth-child(1) {
+                height: 40px;
+                width: 140px;
+            }
+            .cake .layer:nth-child(2) {
+                height: 50px;
+                width: 110px;
+            }
+            .cake .layer:nth-child(3) {
+                height: 70px;
+                width: 80px;
+            }
+            .candle {
+                height: 40px;
+                width: 8px;
+            }
+            .flame {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .message h1 {
+                font-size: 2.5rem;
+            }
+            .message p {
+                font-size: 1.2rem;
+            }
+            .cake {
+                width: 120px;
+                height: 150px;
+            }
+            .cake .layer:nth-child(1) {
+                height: 30px;
+                width: 100px;
+            }
+            .cake .layer:nth-child(2) {
+                height: 40px;
+                width: 80px;
+            }
+            .cake .layer:nth-child(3) {
+                height: 50px;
+                width: 60px;
+            }
+            .candle {
+                height: 30px;
+                width: 6px;
+            }
+            .flame {
+                width: 12px;
+                height: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message">
+            <div class="name">Happy Birthday, Rehan!</div>
+            <h1>Make a Wish!</h1>
+            <p>Wishing you a day filled with love, joy, and laughter!</p>
+        </div>
+        <div class="cake">
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">Made with ❤️ just for you, Rehan!</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.querySelector(".container");
+
+            // Add falling confetti effect
+            function createConfetti() {
+                const confetti = document.createElement("div");
+                confetti.style.position = "absolute";
+                confetti.style.width = "10px";
+                confetti.style.height = "10px";
+                confetti.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+                confetti.style.top = "-10px";
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.opacity = Math.random();
+                confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear infinite`;
+
+                container.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+
+            setInterval(createConfetti, 200);
+
+            // Add confetti falling animation
+            const style = document.createElement("style");
+            style.textContent = `
+                @keyframes fall {
+                    0% {
+                        transform: translateY(0);
+                    }
+                    100% {
+                        transform: translateY(100vh);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
